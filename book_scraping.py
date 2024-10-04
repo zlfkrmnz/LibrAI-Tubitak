@@ -30,22 +30,49 @@ class Scraper:
 
         # Kitap bilgilerini HTML'den çekme
         title = soup.find('h1', class_='pr_header__heading').text.strip()
-        author = soup.find('div', class_='pr_producers__item').text.strip()
-        publisher = soup.find('div', class_='pr_producers__publisher').text.strip()
-        isbn = soup.find('td', text='ISBN:').find_next_sibling().text.strip()
-        page_count = int(soup.find('td', text='Sayfa Sayısı:').find_next_sibling().text.strip())
-        language = soup.find('td', text='Dil:').find_next_sibling().text.strip()
-        publish_date = soup.find('td', text='Yayın Tarihi:').find_next_sibling().text.strip()
-        price = soup.find('div', class_='price__item').text.strip()
         
+        # Yazar bilgisi kontrolü
+        author_div = soup.find('div', class_='pr_producers__item')
+        author = author_div.text.strip() if author_div else 'Yazar bilgisi bulunamadı'
+
+        # Yayıncı bilgisi kontrolü
+        publisher_div = soup.find('div', class_='pr_producers__publisher')
+        publisher = publisher_div.text.strip() if publisher_div else 'Yayıncı bilgisi bulunamadı'
+
+        # ISBN kontrolü
+        isbn_tag = soup.find('td', string='ISBN:')
+        isbn = isbn_tag.find_next_sibling().text.strip() if isbn_tag else 'ISBN bulunamadı'
+
+        # Sayfa sayısı kontrolü ve doğrulama
+        page_count_tag = soup.find('td', string='Sayfa Sayısı:')
+        page_count_text = page_count_tag.find_next_sibling().text.strip() if page_count_tag else '0'
+        
+        try:
+            page_count = int(page_count_text)
+        except ValueError:
+            page_count = 0  # Sayfa sayısı bulunamadıysa veya sayısal değilse 0 olarak ayarla
+
+        # Dil kontrolü
+        language_tag = soup.find('td', string='Dil:')
+        language = language_tag.find_next_sibling().text.strip() if language_tag else 'Dil bilgisi bulunamadı'
+
+        # Yayın tarihi kontrolü
+        publish_date_tag = soup.find('td', string='Yayın Tarihi:')
+        publish_date = publish_date_tag.find_next_sibling().text.strip() if publish_date_tag else 'Yayın tarihi bulunamadı'
+
+        # Fiyat bilgisi
+        price = soup.find('div', class_='price__item').text.strip() if soup.find('div', class_='price__item') else 'Fiyat bilgisi bulunamadı'
+
         # Kitap açıklamasını çekme (description_text)
         description_div = soup.find('div', id='description_text')
         description = description_div.text.strip() if description_div else "Açıklama bulunamadı"
 
-        # Kitap kapak resmi URL'sini çekme
-        image_url = soup.find('div', class_='book-front').find('img')['src']
+        # Kitap kapak resmi URL'si kontrolü
+        image_div = soup.find('div', class_='book-front')
+        image_url = image_div.find('img')['src'] if image_div else "Resim bulunamadı"
         
         return Book(title, author, publisher, isbn, page_count, language, publish_date, price, description, image_url)
+
 
 # Veritabanı bağlantısı oluşturma ve tablo oluşturma
 class Database:
@@ -60,7 +87,7 @@ class Database:
                              title TEXT,
                              author TEXT,
                              publisher TEXT,
-                             isbn TEXT,
+                             isbn TEXT UNIQUE,
                              page_count INTEGER,
                              language TEXT,
                              publish_date TEXT,
@@ -69,11 +96,19 @@ class Database:
                              image_url TEXT)''')
         self.connection.commit()
 
+    def book_exists(self, isbn):
+        self.cursor.execute('''SELECT id FROM books WHERE isbn = ?''', (isbn,))
+        return self.cursor.fetchone() is not None
+
     def insert_book(self, book):
-        self.cursor.execute('''INSERT INTO books (title, author, publisher, isbn, page_count, language, publish_date, price, description, image_url)
-                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
-                               (book.title, book.author, book.publisher, book.isbn, book.page_count, book.language, book.publish_date, book.price, book.description, book.image_url))
-        self.connection.commit()
+        if not self.book_exists(book.isbn):
+            self.cursor.execute('''INSERT INTO books (title, author, publisher, isbn, page_count, language, publish_date, price, description, image_url)
+                                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
+                                   (book.title, book.author, book.publisher, book.isbn, book.page_count, book.language, book.publish_date, book.price, book.description, book.image_url))
+            self.connection.commit()
+            print(f"Kitap veritabanına eklendi: {book.title}")
+        else:
+            print(f"Kitap zaten veritabanında mevcut: {book.title}")
 
     def close(self):
         self.connection.close()
@@ -141,7 +176,7 @@ class Application:
         publishers = self.publisher_db.get_publishers_from_db()
 
         # Her yayıncı için kitap bilgilerini topla
-        for pub_url in publishers:
+        for pub_url in publishers[43:]:
             publisher = Publisher(pub_url)
             books_info = publisher.get_books_from_publisher()
             
@@ -151,7 +186,6 @@ class Application:
                 book = scraper.get_book_info()
                 book.image_url = book_info['image_url']  # image_url'i ekle
                 self.db.insert_book(book)
-                print(f"Kitap veritabanına eklendi: {book.title}")
 
         # Veritabanı bağlantısını kapat
         self.db.close()
