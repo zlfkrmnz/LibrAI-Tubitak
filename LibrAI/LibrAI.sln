@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrAI", "LibrAI\LibrAI.csproj", "{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {229D375A-4E92-48E7-86AA-90165CF46249}
+	EndGlobalSection
+EndGlobal

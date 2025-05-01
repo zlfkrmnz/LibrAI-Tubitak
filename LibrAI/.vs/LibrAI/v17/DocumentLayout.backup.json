@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|c:\\users\\zlfkr\\onedrive\\documents\\github\\librai-tubitak\\librai\\librai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|c:\\users\\zlfkr\\onedrive\\documents\\github\\librai-tubitak\\librai\\librai\\librai.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\librai.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|c:\\users\\zlfkr\\onedrive\\documents\\github\\librai-tubitak\\librai\\librai\\data\\libraidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\data\\libraidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LibrAI",
+              "DocumentMoniker": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\LibrAI.csproj",
+              "RelativeDocumentMoniker": "LibrAI\\LibrAI.csproj",
+              "ToolTip": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\LibrAI.csproj",
+              "RelativeToolTip": "LibrAI\\LibrAI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-19T22:43:04.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Program.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Program.cs",
+              "ToolTip": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Program.cs*",
+              "RelativeToolTip": "LibrAI\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T19:24:14.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LibrAIDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\LibrAIDbContext.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Data\\LibrAIDbContext.cs",
+              "ToolTip": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\LibrAIDbContext.cs",
+              "RelativeToolTip": "LibrAI\\Data\\LibrAIDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wB8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T19:22:14.639Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
