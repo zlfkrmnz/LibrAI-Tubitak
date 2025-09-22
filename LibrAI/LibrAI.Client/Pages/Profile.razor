@@ -1,0 +1,32 @@
+﻿@page "/profile"
+@using LibrAI.Shared
+@inject UserSessionService UserSession
+@inject NavigationManager Navigation
+
+<MudPaper Class="pa-4 mt-6 mx-auto" MaxWidth="500px" Elevation="8">
+    <MudText Typo="Typo.h5">Kullanıcı Profili</MudText>
+
+    @if (user is not null)
+    {
+        <MudText><b>Ad Soyad:</b> @user.FullName</MudText>
+        <MudText><b>Email:</b> @user.Email</MudText>
+    }
+    else
+    {
+        <MudText Color="Color.Error">Giriş yapılmamış.</MudText>
+    }
+</MudPaper>
+
+@code {
+    private UserDto? user;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await UserSession.GetUserAsync();
+
+        if (user == null)
+        {
+            Navigation.NavigateTo("/login");
+        }
+    }
+}

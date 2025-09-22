@@ -1,0 +1,271 @@
+﻿@page "/books"
+@using Microsoft.AspNetCore.WebUtilities
+@using System.Net.Http.Json
+@inject NavigationManager Navigation
+@inject HttpClient Http
+
+<PageTitle>Kitap Kataloğu</PageTitle>
+
+<MudPaper Class="p-6 rounded-xl">
+
+    <!-- Başlık -->
+    <MudText Typo="Typo.h4" Class="font-semibold">Kitap Kataloğu</MudText>
+    <MudText Typo="Typo.caption" Class="mb-4 text-secondary">
+        Tüm kitapları burada bulabilir, filtreleyip arayabilirsiniz.
+    </MudText>
+
+    <!-- Arama ve Filtre -->
+    <MudPaper Class="p-4 rounded-lg mb-6">
+        <div class="flex flex-col gap-3 md:flex-row">
+            <MudTextField @bind-Value="_query"
+                          Placeholder="Kitap, yazar, ISBN…"
+                          Adornment="Adornment.Start"
+                          AdornmentIcon="@Icons.Material.Filled.Search"
+                          Class="w-full"
+                          Immediate="true" />
+
+            <MudSelect T="BookFilter" @bind-Value="_selected" Label="Filtre" Class="w-full md:w-64">
+                <MudSelectItem Value="BookFilter.Title">Başlık</MudSelectItem>
+                <MudSelectItem Value="BookFilter.Author">Yazar</MudSelectItem>
+                <MudSelectItem Value="BookFilter.Isbn">ISBN</MudSelectItem>
+                <MudSelectItem Value="BookFilter.All">Tümü</MudSelectItem>
+            </MudSelect>
+
+            <MudSelect T="int" @bind-Value="_pageSize" Label="Sayfa boyutu" Class="w-full md:w-40">
+                <MudSelectItem Value="12">12</MudSelectItem>
+                <MudSelectItem Value="24">24</MudSelectItem>
+                <MudSelectItem Value="48">48</MudSelectItem>
+            </MudSelect>
+
+            <MudButton OnClick="OnSearch"
+                       Color="Color.Primary"
+                       Variant="Variant.Filled"
+                       Disabled="_loading"
+                       Class="w-full md:w-auto">
+                Ara
+            </MudButton>
+        </div>
+    </MudPaper>
+
+    <!-- Durumlar -->
+    @if (!string.IsNullOrWhiteSpace(_error))
+    {
+        <MudAlert Severity="Severity.Error" Class="mb-4">@_error</MudAlert>
+    }
+
+    @if (_loading)
+    {
+        <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="140" Class="mb-3" />
+        <MudSkeleton SkeletonType="SkeletonType.Text" Width="60%" />
+        <MudSkeleton SkeletonType="SkeletonType.Text" Width="40%" />
+    }
+    else
+    {
+        <!-- Kitap Grid -->
+        <MudGrid GutterSize="GutterSize.Small">
+            @if (_books.Count == 0)
+            {
+                <MudItem xs="12">
+                    <MudAlert Severity="Severity.Info">Hiç kitap bulunamadı.</MudAlert>
+                </MudItem>
+            }
+            else
+            {
+                @foreach (var b in _books)
+                {
+                    <MudItem xs="12" sm="6" md="4" lg="3">
+                        @BookCard(b)
+                    </MudItem>
+                }
+            }
+        </MudGrid>
+
+        <!-- Sayfalama -->
+        @if (_total > _pageSize)
+        {
+            <div class="mt-6 flex items-center justify-between gap-3">
+                <MudText Typo="Typo.caption" Class="text-secondary">
+                    Toplam: @_total • Sayfa @_page / @_pageCount
+                </MudText>
+
+                <MudPagination Page="_page"
+                               PageCount="@_pageCount"
+                               OnPageChanged="OnPageChanged" />
+            </div>
+        }
+    }
+</MudPaper>
+
+@code {
+    // ---- Model / Enum ----
+    public enum BookFilter { All, Title, Author, Isbn }
+
+    // API DTO'ları (Client tarafı için)
+    private record BookListItemDto(int Id, string? Title, string? Author, string? Isbn, string? ImageUrl, bool Available);
+    private record PagedResult<T>(IReadOnlyList<T> Items, int Total, int Page, int PageSize);
+
+    // UI kart modeli
+    private record BookCardVm(string Title, string Author, string CoverUrl, string Isbn, bool Available);
+
+    // ---- State ----
+    private string _query = string.Empty;
+    private BookFilter _selected = BookFilter.All;
+    private List<BookCardVm> _books = new();
+
+    private int _page = 1;
+    private int _pageSize = 24;
+    private int _total = 0;
+    private int _pageCount => Math.Max(1, (int)Math.Ceiling((double)_total / _pageSize));
+
+    private bool _loading;
+    private string? _error;
+
+    // ---- Lifecycle ----
+    protected override async Task OnInitializedAsync()
+    {
+        ReadQueryFromUrl();
+        await LoadBooksAsync();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        // Aynı route üzerinde query değişmiş olabilir
+        var prev = (_query, _selected, _page, _pageSize);
+        ReadQueryFromUrl();
+        var curr = (_query, _selected, _page, _pageSize);
+        if (!prev.Equals(curr))
+            await LoadBooksAsync();
+    }
+
+    // ---- Actions ----
+    private async Task OnSearch()
+    {
+        _page = 1; // yeni aramada başa dön
+        PushUrl();
+        await LoadBooksAsync();
+    }
+
+    private async Task OnPageChanged(int newPage)
+    {
+        _page = newPage;
+        PushUrl();
+        await LoadBooksAsync();
+    }
+
+    // ---- Helpers ----
+    private void ReadQueryFromUrl()
+    {
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        var dict = QueryHelpers.ParseQuery(uri.Query);
+
+        if (dict.TryGetValue("q", out var qv)) _query = qv.ToString();
+        if (dict.TryGetValue("filter", out var fv)) _selected = ToFilterEnum(fv.ToString());
+        if (dict.TryGetValue("page", out var pv) && int.TryParse(pv, out var p) && p > 0) _page = p;
+        if (dict.TryGetValue("pageSize", out var psv) && int.TryParse(psv, out var ps) && ps > 0) _pageSize = ps;
+
+        // Kategori bağlantısından geldiyse (Home’dan)
+        if (dict.TryGetValue("category", out var cat))
+        {
+            _query = cat.ToString();
+            _selected = BookFilter.Title; // kategoriyi başlıkta arıyoruz (istersen All yap)
+            _page = 1;
+        }
+    }
+
+    private void PushUrl()
+    {
+        var filter = _selected.ToString().ToLowerInvariant();
+        var q = Uri.EscapeDataString(_query ?? "");
+        Navigation.NavigateTo($"/books?filter={filter}&q={q}&page={_page}&pageSize={_pageSize}", forceLoad: false);
+    }
+
+    private static BookFilter ToFilterEnum(string? s) =>
+        s?.Trim().ToLowerInvariant() switch
+        {
+            "title" => BookFilter.Title,
+            "author" => BookFilter.Author,
+            "isbn" => BookFilter.Isbn,
+            _ => BookFilter.All
+        };
+
+    private async Task LoadBooksAsync()
+    {
+        _loading = true;
+        _error = null;
+
+        try
+        {
+            var filter = _selected.ToString().ToLowerInvariant();
+            var q = Uri.EscapeDataString(_query ?? "");
+
+            var url = $"api/books?filter={filter}&q={q}&page={_page}&pageSize={_pageSize}";
+            var result = await Http.GetFromJsonAsync<PagedResult<BookListItemDto>>(url);
+
+            if (result is null)
+            {
+                _books.Clear();
+                _total = 0;
+                return;
+            }
+
+            _total = result.Total;
+            _page = Math.Max(1, result.Page);
+            _pageSize = result.PageSize;
+
+            _books = result.Items
+                .Select(x => new BookCardVm(
+                    Title: x.Title ?? "(Başlık yok)",
+                    Author: x.Author ?? "(Yazar yok)",
+                    CoverUrl: string.IsNullOrWhiteSpace(x.ImageUrl) ? "images/covers/placeholder.jpg" : x.ImageUrl!,
+                    Isbn: x.Isbn ?? "",
+                    Available: x.Available
+                ))
+                .ToList();
+        }
+        catch (HttpRequestException ex)
+        {
+            _error = $"Sunucuya ulaşılamıyor: {ex.Message}";
+            _books.Clear();
+            _total = 0;
+        }
+        catch (Exception ex)
+        {
+            _error = $"Beklenmeyen bir hata: {ex.Message}";
+            _books.Clear();
+            _total = 0;
+        }
+        finally
+        {
+            _loading = false;
+            StateHasChanged();
+        }
+    }
+
+    private RenderFragment BookCard(BookCardVm b) => @<MudCard Class="h-full">
+    <MudCardMedia Image="@b.CoverUrl" Alt="@b.Title" Height="180" />
+    <MudCardContent>
+        <MudText Typo="Typo.subtitle1" Class="line-clamp-2">@b.Title</MudText>
+        <MudText Typo="Typo.caption" Class="text-secondary">@b.Author</MudText>
+        <div class="mt-2 flex items-center gap-2">
+            <MudChip T="string"
+                     Color="@((b.Available ? Color.Success : Color.Error))"
+                     Variant="Variant.Outlined"
+                     Size="Size.Small">
+                @(b.Available ? "Müsait" : "Ödünçte")
+            </MudChip>
+            @if (!string.IsNullOrWhiteSpace(b.Isbn))
+                        {
+            <MudText Typo="Typo.caption">ISBN: @b.Isbn</MudText>
+                        }
+        </div>
+    </MudCardContent>
+    <MudCardActions>
+        <MudButton Variant="Variant.Outlined"
+                   Color="Color.Primary"
+                   Href="@($"/books/{b.Isbn}")"
+                   Disabled="@string.IsNullOrWhiteSpace(b.Isbn)">
+            Detay
+        </MudButton>
+    </MudCardActions>
+</MudCard>;
+}

@@ -1,0 +1,148 @@
+﻿@page "/register"
+@inject AuthClient Auth
+@inject NavigationManager Nav
+
+<MudPaper Class="p-6 max-w-md mx-auto rounded-xl">
+    <MudText Typo="Typo.h5" Class="mb-4">Kayıt Ol</MudText>
+
+    <EditForm Model="_m" OnValidSubmit="OnSubmit">
+        <DataAnnotationsValidator />
+        <MudForm>
+
+            <MudTextField @bind-Value="_m.FullName"
+                          Label="Ad Soyad"
+                          For="@(()=>_m.FullName)"
+                          Required="true"
+                          RequiredError="Ad Soyad zorunludur." />
+
+            <MudTextField Class="mt-2"
+                          @bind-Value="_m.Email"
+                          Label="E-posta"
+                          For="@(()=>_m.Email)"
+                          Required="true"
+                          RequiredError="E-posta zorunludur."
+                          InputType="InputType.Email" />
+
+            <MudTextField Class="mt-2"
+                          @bind-Value="_m.Password"
+                          Label="Şifre"
+                          For="@(()=>_m.Password)"
+                          Required="true"
+                          RequiredError="Şifre zorunludur."
+                          InputType="@(_showPwd ? InputType.Text : InputType.Password)"
+                          Adornment="Adornment.End"
+                          AdornmentIcon="@(_showPwd ? Icons.Material.Filled.VisibilityOff : Icons.Material.Filled.Visibility)"
+                          OnAdornmentClick="@(()=>_showPwd = !_showPwd)" />
+
+            <MudText Class="text-secondary mt-1" Typo="Typo.caption">
+                En az 6 karakter; rakam ve harf içermesi önerilir.
+            </MudText>
+
+            <MudTextField Class="mt-2"
+                          @bind-Value="_m.ConfirmPassword"
+                          Label="Şifre (Tekrar)"
+                          For="@(()=>_m.ConfirmPassword)"
+                          Required="true"
+                          RequiredError="Şifre tekrarı zorunludur."
+                          InputType="@(_showPwd ? InputType.Text : InputType.Password)" />
+
+            <MudCheckBox T="string" Class="mt-3"
+                         @bind-Checked="_m.AcceptTerms"
+                         Label="Kullanım şartlarını kabul ediyorum" />
+            <ValidationMessage For="@(()=>_m.AcceptTerms)" />
+
+            <MudButton Class="mt-4"
+                       Color="Color.Primary"
+                       Variant="Variant.Filled"
+                       Disabled="_busy"
+                       ButtonType="ButtonType.Submit">
+                @if (_busy) { <MudProgressCircular Indeterminate="true" Size="Size.Small" Class="mr-2" /> }
+                Kaydol
+            </MudButton>
+
+            <ValidationSummary />
+
+            @if (!string.IsNullOrWhiteSpace(_err))
+            {
+                <MudAlert Severity="Severity.Error" Class="mt-3">@_err</MudAlert>
+            }
+            @if (_okMessage is not null)
+            {
+                <MudAlert Severity="Severity.Success" Class="mt-3">@_okMessage</MudAlert>
+            }
+        </MudForm>
+    </EditForm>
+</MudPaper>
+
+@code {
+    private bool _busy;
+    private bool _showPwd;
+    private string? _err;
+    private string? _okMessage;
+
+    private RegisterModel _m = new();
+
+    private async Task OnSubmit()
+    {
+        _err = null; _okMessage = null; _busy = true;
+
+        try
+        {
+            // AuthClient tarafında fullName'i gönderecek bir overload varsa onu kullanıyoruz
+            var ok = await Auth.RegisterAsync(_m.Email, _m.Password, _m.FullName);
+
+            if (ok)
+            {
+                _okMessage = "Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz…";
+                // 1–2 sn bekletmek istersen: await Task.Delay(800);
+                Nav.NavigateTo("/login", forceLoad: true);
+            }
+            else
+            {
+                _err = "Kayıt başarısız. Lütfen bilgileri kontrol edin.";
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            _err = $"Sunucuya ulaşılamadı: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            _err = $"Beklenmeyen bir hata oluştu: {ex.Message}";
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    // --- Model ve doğrulamalar ---
+    public class RegisterModel
+    {
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Ad Soyad zorunludur.")]
+        [System.ComponentModel.DataAnnotations.StringLength(100, ErrorMessage = "Ad Soyad 100 karakteri geçemez.")]
+        public string FullName { get; set; } = "";
+
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "E-posta zorunludur.")]
+        [System.ComponentModel.DataAnnotations.EmailAddress(ErrorMessage = "Geçerli bir e-posta giriniz.")]
+        public string Email { get; set; } = "";
+
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Şifre zorunludur.")]
+        [System.ComponentModel.DataAnnotations.StringLength(100, MinimumLength = 6, ErrorMessage = "Şifre en az 6 karakter olmalı.")]
+        public string Password { get; set; } = "";
+
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Şifre tekrarı zorunludur.")]
+        [System.ComponentModel.DataAnnotations.Compare(nameof(Password), ErrorMessage = "Şifreler uyuşmuyor.")]
+        public string ConfirmPassword { get; set; } = "";
+
+        [AcceptTerms]
+        public bool AcceptTerms { get; set; }
+    }
+
+    // "Şartlar" checkbox'ı için custom attribute
+    class AcceptTermsAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute
+    {
+        public AcceptTermsAttribute() : base("Lütfen kullanım şartlarını kabul edin.") { }
+        public override bool IsValid(object? value) => value is bool b && b;
+    }
+}

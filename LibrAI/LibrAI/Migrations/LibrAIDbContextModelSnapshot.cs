@@ -3,236 +3,146 @@ using System;
 using LibrAI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace LibrAI.Migrations
 {
-    [DbContext(typeof(LibrAIDbContext))]
-    partial class LibrAIDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(LibrAiDbContext))]
+    partial class LibrAiDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.3")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            modelBuilder.Entity("LibrAI.Data.Entities.Book", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
 
-            modelBuilder.Entity("LibrAI.Models.Book", b =>
+                    b.Property<string>("author")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("author");
+
+                    b.Property<string>("description")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("description");
+
+                    b.Property<string>("image_url")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("image_url");
+
+                    b.Property<string>("isbn")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("isbn");
+
+                    b.Property<string>("language")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("language");
+
+                    b.Property<int?>("page_count")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("page_count");
+
+                    b.Property<string>("price")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("price");
+
+                    b.Property<string>("publish_date")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("publish_date");
+
+                    b.Property<string>("publisher")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("publisher");
+
+                    b.Property<string>("title")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("title");
+
+                    b.HasKey("id");
+
+                    b.ToTable("books", (string)null);
+                });
+
+            modelBuilder.Entity("LibrAI.Data.Entities.Publisher", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
+
+                    b.Property<string>("image_url")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("image_url");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("name");
+
+                    b.Property<string>("url")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("url");
+
+                    b.HasKey("id");
+
+                    b.ToTable("publishers", (string)null);
+                });
+
+            modelBuilder.Entity("LibrAI.Features.Books.Loan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<int>("BookId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("book_id");
 
-                    b.Property<string>("Author")
+                    b.Property<DateTime>("BorrowedAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("borrowed_at");
+
+                    b.Property<DateTime>("DueAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("due_at");
+
+                    b.Property<DateTime?>("ReturnedAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("returned_at");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ISBN")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Language")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PageCount")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("PublishDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Publisher")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.HasIndex("BookId")
+                        .HasDatabaseName("IX_loans_book");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("IX_loans_user");
+
+                    b.ToTable("loans", (string)null);
                 });
 
-            modelBuilder.Entity("LibrAI.Models.Publisher", b =>
+            modelBuilder.Entity("LibrAI.Features.Books.Loan", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Publishers");
-                });
-
-            modelBuilder.Entity("LibrAI.Models.Review", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BookID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ReviewDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ReviewText")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Reviews");
-                });
-
-            modelBuilder.Entity("LibrAI.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("RegistrationDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("LibrAI.Models.UserBook", b =>
-                {
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("BorrowDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ReturnDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("UserID", "BookID");
-
-                    b.ToTable("UserBooks");
-                });
-
-            modelBuilder.Entity("LibrAI.Models.UserFavorite", b =>
-                {
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookID")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserID", "BookID");
-
-                    b.HasIndex("BookID");
-
-                    b.ToTable("UserFavorites");
-                });
-
-            modelBuilder.Entity("LibrAI.Models.UserPreference", b =>
-                {
-                    b.Property<int>("UserID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"));
-
-                    b.Property<string>("FavoriteAuthors")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FavoriteGenres")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LanguagePreferences")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserID");
-
-                    b.ToTable("UserPreferences");
-                });
-
-            modelBuilder.Entity("LibrAI.Models.UserFavorite", b =>
-                {
-                    b.HasOne("LibrAI.Models.Book", "Book")
+                    b.HasOne("LibrAI.Data.Entities.Book", "Book")
                         .WithMany()
-                        .HasForeignKey("BookID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LibrAI.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID")
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Book");
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

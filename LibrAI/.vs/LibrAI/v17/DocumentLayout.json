@@ -1,14 +1,150 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\",
+  "WorkspaceRootPath": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|c:\\users\\zlfkr\\onedrive\\documents\\github\\librai-tubitak\\librai\\librai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\services\\authclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\services\\authclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|c:\\users\\zlfkr\\onedrive\\documents\\github\\librai-tubitak\\librai\\librai\\services\\seedroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EE6805-A805-4BF6-8C95-7A6AAC2BBEA3}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\services\\seedroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\auth\\tokenauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\auth\\tokenauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\data\\auth\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\data\\auth\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\data\\auth\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\data\\auth\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\controllers\\statscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\controllers\\statscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\pages\\bookdetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\pages\\bookdetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\features\\books\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\features\\books\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\controllers\\loanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\controllers\\loanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\data\\libraidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\data\\libraidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\librai.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\librai.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\pages\\books.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\pages\\books.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\features\\books\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\features\\books\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\features\\books\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\features\\books\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\features\\books\\bookdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\features\\books\\bookdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\features\\books\\publisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\features\\books\\publisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\features\\books\\ipublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\features\\books\\ipublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai\\features\\books\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14C15DA-B1DB-4A74-9D52-294C60DD8357}|LibrAI\\LibrAI.csproj|solutionrelative:librai\\features\\books\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\pages\\profile.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\pages\\profile.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\services\\usersessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\services\\usersessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\librai.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\librai.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74FB27F-EB54-4E6E-8F83-D4B3F9696043}|LibrAI.Shared\\LibrAI.Shared.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.shared\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F74FB27F-EB54-4E6E-8F83-D4B3F9696043}|LibrAI.Shared\\LibrAI.Shared.csproj|solutionrelative:librai.shared\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|c:\\mac\\home\\documents\\github\\librai-tubitak\\librai\\librai.client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4FED784-BF45-438E-B7C5-E8DBD8A2B263}|LibrAI.Client\\LibrAI.Client.csproj|solutionrelative:librai.client\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +154,478 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SeedRoles.cs",
-              "DocumentMoniker": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Services\\SeedRoles.cs",
-              "RelativeDocumentMoniker": "LibrAI\\Services\\SeedRoles.cs",
-              "ToolTip": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Services\\SeedRoles.cs",
-              "RelativeToolTip": "LibrAI\\Services\\SeedRoles.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\App.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\App.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\App.razor",
+              "RelativeToolTip": "LibrAI.Client\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T01:53:53.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TokenAuthStateProvider.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Auth\\TokenAuthStateProvider.cs",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Auth\\TokenAuthStateProvider.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Auth\\TokenAuthStateProvider.cs",
+              "RelativeToolTip": "LibrAI.Client\\Auth\\TokenAuthStateProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T23:13:14.071Z",
+              "WhenOpened": "2025-09-22T00:47:18.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoansController.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\LoansController.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Controllers\\LoansController.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\LoansController.cs",
+              "RelativeToolTip": "LibrAI\\Controllers\\LoansController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T00:20:35.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Loan.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\Loan.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Features\\Books\\Loan.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\Loan.cs",
+              "RelativeToolTip": "LibrAI\\Features\\Books\\Loan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T23:53:35.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Program.cs",
-              "RelativeDocumentMoniker": "LibrAI\\Program.cs",
-              "ToolTip": "C:\\Users\\zlfkr\\OneDrive\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Program.cs",
-              "RelativeToolTip": "LibrAI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Title": "AuthClient.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Services\\AuthClient.cs",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Services\\AuthClient.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Services\\AuthClient.cs",
+              "RelativeToolTip": "LibrAI.Client\\Services\\AuthClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T19:24:14.465Z",
+              "WhenOpened": "2025-09-21T23:49:39.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthDbContext.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\Auth\\AuthDbContext.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Data\\Auth\\AuthDbContext.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\Auth\\AuthDbContext.cs",
+              "RelativeToolTip": "LibrAI\\Data\\Auth\\AuthDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T23:38:19.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\Auth\\AppUser.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Data\\Auth\\AppUser.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\Auth\\AppUser.cs",
+              "RelativeToolTip": "LibrAI\\Data\\Auth\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T23:37:15.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "LibrAI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "LibrAI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-21T23:24:43.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StatsController.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\StatsController.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Controllers\\StatsController.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\StatsController.cs",
+              "RelativeToolTip": "LibrAI\\Controllers\\StatsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T23:14:41.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Pages\\Home.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Home.razor",
+              "RelativeToolTip": "LibrAI.Client\\Pages\\Home.razor",
+              "ViewState": "AgIAALcAAAAAAAAAAAAMwMsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T23:07:45.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BookDetail.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\BookDetail.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Pages\\BookDetail.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\BookDetail.razor",
+              "RelativeToolTip": "LibrAI.Client\\Pages\\BookDetail.razor",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAQwAwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T22:58:10.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PublishersController.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\PublishersController.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Controllers\\PublishersController.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\PublishersController.cs",
+              "RelativeToolTip": "LibrAI\\Controllers\\PublishersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:52:49.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "LibrAI\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:52:12.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\BookService.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Features\\Books\\BookService.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\BookService.cs",
+              "RelativeToolTip": "LibrAI\\Features\\Books\\BookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:51:23.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BookDtos.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\BookDtos.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Features\\Books\\BookDtos.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\BookDtos.cs",
+              "RelativeToolTip": "LibrAI\\Features\\Books\\BookDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:50:28.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PublisherRepository.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\PublisherRepository.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Features\\Books\\PublisherRepository.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\PublisherRepository.cs",
+              "RelativeToolTip": "LibrAI\\Features\\Books\\PublisherRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:49:59.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IPublisherRepository.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\IPublisherRepository.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Features\\Books\\IPublisherRepository.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\IPublisherRepository.cs",
+              "RelativeToolTip": "LibrAI\\Features\\Books\\IPublisherRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:49:31.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\BookRepository.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Features\\Books\\BookRepository.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\BookRepository.cs",
+              "RelativeToolTip": "LibrAI\\Features\\Books\\BookRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAkwBUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:48:22.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IBookRepository.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\IBookRepository.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Features\\Books\\IBookRepository.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Features\\Books\\IBookRepository.cs",
+              "RelativeToolTip": "LibrAI\\Features\\Books\\IBookRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:47:53.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LibrAI",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\LibrAI.csproj",
+              "RelativeDocumentMoniker": "LibrAI\\LibrAI.csproj",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\LibrAI.csproj",
+              "RelativeToolTip": "LibrAI\\LibrAI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-21T20:47:16.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LibrAiDbContext.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\LibrAiDbContext.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Data\\LibrAiDbContext.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Data\\LibrAiDbContext.cs",
+              "RelativeToolTip": "LibrAI\\Data\\LibrAiDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T22:29:05.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\appsettings.json",
+              "RelativeDocumentMoniker": "LibrAI\\appsettings.json",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\appsettings.json",
+              "RelativeToolTip": "LibrAI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-21T22:22:53.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Books.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Books.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Pages\\Books.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Books.razor",
+              "RelativeToolTip": "LibrAI.Client\\Pages\\Books.razor",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAlwMkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T21:30:57.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UserSessionService.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Services\\UserSessionService.cs",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Services\\UserSessionService.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Services\\UserSessionService.cs",
+              "RelativeToolTip": "LibrAI.Client\\Services\\UserSessionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T20:16:14.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "LibrAI.Client.csproj",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\LibrAI.Client.csproj",
+              "RelativeDocumentMoniker": "LibrAI.Client\\LibrAI.Client.csproj",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\LibrAI.Client.csproj",
+              "RelativeToolTip": "LibrAI.Client\\LibrAI.Client.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-15T14:45:29.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "LibrAI.Client\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T14:05:09.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Routes.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Routes.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Routes.razor",
+              "RelativeToolTip": "LibrAI.Client\\Routes.razor",
+              "ViewState": "AgIAAAUAAADQDLUKI0QSwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T13:57:48.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "LibrAI.Client\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T13:55:15.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Profile.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Profile.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Pages\\Profile.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Profile.razor",
+              "RelativeToolTip": "LibrAI.Client\\Pages\\Profile.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T20:41:56.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Shared\\UserDto.cs",
+              "RelativeDocumentMoniker": "LibrAI.Shared\\UserDto.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Shared\\UserDto.cs",
+              "RelativeToolTip": "LibrAI.Shared\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T20:30:32.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Program.cs",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Program.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Program.cs",
+              "RelativeToolTip": "LibrAI.Client\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwA0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T19:26:14.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Program.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Program.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Program.cs",
+              "RelativeToolTip": "LibrAI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T19:24:43.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "LibrAI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "LibrAI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T19:23:57.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Register.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Pages\\Register.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Register.razor",
+              "RelativeToolTip": "LibrAI.Client\\Pages\\Register.razor",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowDEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T19:19:45.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\_Imports.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\_Imports.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\_Imports.razor",
+              "RelativeToolTip": "LibrAI.Client\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T19:16:44.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "LibrAI.Client\\Pages\\Login.razor",
+              "ToolTip": "C:\\Mac\\Home\\Documents\\GitHub\\LibrAI-Tubitak\\LibrAI\\LibrAI.Client\\Pages\\Login.razor",
+              "RelativeToolTip": "LibrAI.Client\\Pages\\Login.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T19:16:31.122Z",
               "EditorCaption": ""
             }
           ]

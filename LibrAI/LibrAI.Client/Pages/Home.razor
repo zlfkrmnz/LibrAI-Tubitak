@@ -1,0 +1,262 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+@inject HttpClient Http
+@rendermode InteractiveWebAssembly
+
+<PageTitle>Kütüphane</PageTitle>
+
+<MudPaper Class="p-6 rounded-xl">
+    <!-- Hero / Başlık -->
+    <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+        <div>
+            <MudText Typo="Typo.h4" Class="font-semibold">Kütüphane</MudText>
+            <MudText Typo="Typo.subtitle1" Class="text-secondary">
+                Aradığın kitabı bul, ödünç al ve okumaya başla.
+            </MudText>
+        </div>
+
+        <!-- Hızlı İşlemler -->
+        <div class="flex gap-2">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/books">
+                <MudIcon Icon="@Icons.Material.Filled.Search" Class="mr-2" />
+                Kataloğu Keşfet
+            </MudButton>
+            <MudButton Variant="Variant.Outlined" Color="Color.Primary" Href="/borrow">
+                <MudIcon Icon="@Icons.Material.Filled.LibraryBooks" Class="mr-2" />
+                Ödünç Al
+            </MudButton>
+            <MudButton Variant="Variant.Outlined" Color="Color.Secondary" Href="/returns">
+                <MudIcon Icon="@Icons.Material.Filled.Undo" Class="mr-2" />
+                İade Et
+            </MudButton>
+        </div>
+    </div>
+
+    <!-- Arama -->
+    <MudPaper Class="p-4 mt-6 rounded-lg">
+        <MudText Typo="Typo.subtitle2" Class="mb-2">Katalogda Ara</MudText>
+        <div class="flex flex-col gap-3 md:flex-row">
+            <MudTextField @bind-Value="_query" Placeholder="Kitap, yazar, ISBN…" Adornment="Adornment.Start"
+                          AdornmentIcon="@Icons.Material.Filled.Search" Class="w-full" Immediate="true" />
+            <MudSelect T="BookFilter" @bind-Value="_selected" Label="Filtre" Class="w-full md:w-64">
+                <MudSelectItem Value="BookFilter.Title">Başlık</MudSelectItem>
+                <MudSelectItem Value="BookFilter.Author">Yazar</MudSelectItem>
+                <MudSelectItem Value="BookFilter.Isbn">ISBN</MudSelectItem>
+                <MudSelectItem Value="BookFilter.All">Tümü</MudSelectItem>
+            </MudSelect>
+            <MudButton OnClick="OnSearch" Color="Color.Primary" Variant="Variant.Filled" Class="w-full md:w-auto">
+                Ara
+            </MudButton>
+        </div>
+        @if (_showSearchHint)
+        {
+            <MudText Typo="Typo.caption" Class="mt-2 text-secondary">
+                İpucu: "Orhan Pamuk", "978…" gibi anahtar kelimeler deneyin.
+            </MudText>
+        }
+    </MudPaper>
+
+    <!-- Kategoriler -->
+    <div class="mt-6">
+        <MudText Typo="Typo.subtitle2" Class="mb-2">Kategoriler</MudText>
+        <div class="flex flex-wrap gap-2">
+            @foreach (var c in _categories)
+            {
+                <MudChip T="string"
+                         OnClick="@(()=>GoToCategory(c.Slug))"
+                         Color="Color.Primary"
+                         Variant="Variant.Outlined"
+                         Icon="@c.Icon">
+                    @c.Name
+                </MudChip>
+            }
+        </div>
+    </div>
+
+    <!-- Yeni Gelenler -->
+    <div class="mt-8">
+        <div class="flex items-center justify-between mb-2">
+            <MudText Typo="Typo.h6">Yeni Gelenler</MudText>
+            <MudButton Href="/books?sort=new" Variant="Variant.Text" EndIcon="@Icons.Material.Filled.ArrowForward">Tümünü Gör</MudButton>
+        </div>
+        <MudGrid GutterSize="GutterSize.Small">
+            @if (_loadingNew)
+            {
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="160" />
+            }
+            else
+            {
+                @foreach (var b in _newArrivals)
+                {
+                    <MudItem xs="12" sm="6" md="4" lg="3">
+                        @BookCard(b)
+                    </MudItem>
+                }
+            }
+        </MudGrid>
+    </div>
+
+    <!-- Popüler Kitaplar -->
+    <div class="mt-8">
+        <div class="flex items-center justify-between mb-2">
+            <MudText Typo="Typo.h6">Popüler Kitaplar</MudText>
+            <MudButton Href="/books?sort=popular" Variant="Variant.Text" EndIcon="@Icons.Material.Filled.ArrowForward">Tümünü Gör</MudButton>
+        </div>
+        <MudGrid GutterSize="GutterSize.Small">
+            @if (_loadingPopular)
+            {
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="160" />
+            }
+            else
+            {
+                @foreach (var b in _popular)
+                {
+                    <MudItem xs="12" sm="6" md="4" lg="3">
+                        @BookCard(b)
+                    </MudItem>
+                }
+            }
+        </MudGrid>
+    </div>
+
+    <!-- İstatistikler -->
+    <MudPaper Class="p-4 mt-8 rounded-lg">
+        <MudGrid>
+            <MudItem xs="12" sm="4">
+                <MudText Typo="Typo.h6">@_stats.TotalBooks</MudText>
+                <MudText Typo="Typo.caption" Class="text-secondary">Toplam Kitap</MudText>
+            </MudItem>
+            <MudItem xs="12" sm="4">
+                <MudText Typo="Typo.h6">@_stats.AvailableNow</MudText>
+                <MudText Typo="Typo.caption" Class="text-secondary">Şu An Müsait</MudText>
+            </MudItem>
+            <MudItem xs="12" sm="4">
+                <MudText Typo="Typo.h6">@_stats.Loaned</MudText>
+                <MudText Typo="Typo.caption" Class="text-secondary">Ödünçte</MudText>
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+</MudPaper>
+
+@code {
+    private string _query = string.Empty;
+    private bool _showSearchHint = true;
+    public enum BookFilter { All, Title, Author, Isbn }
+    private BookFilter _selected = BookFilter.All;
+
+    // API DTO’ları
+    private record BookListItemDto(int Id, string? Title, string? Author, string? Isbn, string? ImageUrl, bool Available);
+    private record PagedResult<T>(IReadOnlyList<T> Items, int Total, int Page, int PageSize);
+    private record StatsDto(int TotalBooks, int AvailableNow, int Loaned);
+
+    // UI modelleri
+    private record Category(string Name, string Slug, string Icon);
+    private record BookCardVm(string Title, string Author, string CoverUrl, string Isbn, bool Available);
+
+    private readonly List<Category> _categories =
+    [
+        new("Roman", "roman", Icons.Material.Filled.MenuBook),
+        new("Bilim", "bilim", Icons.Material.Filled.Science),
+        new("Tarih", "tarih", Icons.Material.Filled.AccountBalance),
+        new("Çocuk", "cocuk", Icons.Material.Filled.ChildCare),
+        new("Kişisel Gelişim", "gelisim", Icons.Material.Filled.SelfImprovement),
+        new("Mühendislik", "muhendislik", Icons.Material.Filled.Engineering)
+    ];
+
+    private List<BookCardVm> _newArrivals = new();
+    private List<BookCardVm> _popular = new();
+    private StatsDto _stats = new(0, 0, 0);
+
+    private bool _loadingNew = true;
+    private bool _loadingPopular = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadStatsAsync();
+        await LoadNewArrivalsAsync();
+        await LoadPopularAsync();
+    }
+
+    private void OnSearch()
+    {
+        _showSearchHint = false;
+        var q = Uri.EscapeDataString(_query ?? "");
+        var filter = _selected.ToString().ToLowerInvariant();
+        Navigation.NavigateTo($"/books?filter={filter}&q={q}");
+    }
+
+    private void GoToCategory(string slug) => Navigation.NavigateTo($"/books?category={slug}");
+
+    private async Task LoadStatsAsync()
+    {
+        try
+        {
+            var s = await Http.GetFromJsonAsync<StatsDto>("api/stats");
+            if (s is not null) _stats = s;
+        }
+        catch { _stats = new(0, 0, 0); }
+    }
+
+    private async Task LoadNewArrivalsAsync()
+    {
+        try
+        {
+            var res = await Http.GetFromJsonAsync<PagedResult<BookListItemDto>>("api/books?sort=new&page=1&pageSize=4");
+            if (res?.Items != null)
+            {
+                _newArrivals = res.Items.Select(MapToCard).ToList();
+            }
+        }
+        finally { _loadingNew = false; }
+    }
+
+    private async Task LoadPopularAsync()
+    {
+        try
+        {
+            var res = await Http.GetFromJsonAsync<PagedResult<BookListItemDto>>("api/books?sort=popular&page=1&pageSize=4");
+            if (res?.Items != null)
+            {
+                _popular = res.Items.Select(MapToCard).ToList();
+            }
+        }
+        finally { _loadingPopular = false; }
+    }
+
+    private static BookCardVm MapToCard(BookListItemDto dto) =>
+        new(dto.Title ?? "(Başlık yok)",
+            dto.Author ?? "(Yazar yok)",
+            string.IsNullOrWhiteSpace(dto.ImageUrl) ? "images/covers/placeholder.jpg" : dto.ImageUrl!,
+            dto.Isbn ?? "",
+            dto.Available);
+
+    private RenderFragment BookCard(BookCardVm b) => @<MudCard Class="h-full">
+    <MudCardMedia Image="@b.CoverUrl" Alt="@b.Title" Height="180" />
+    <MudCardContent>
+        <MudText Typo="Typo.subtitle1" Class="line-clamp-2">@b.Title</MudText>
+        <MudText Typo="Typo.caption" Class="text-secondary">@b.Author</MudText>
+        <div class="mt-2 flex items-center gap-2">
+            <MudChip T="string" Color="@((b.Available ? Color.Success : Color.Error))"
+                     Variant="Variant.Outlined" Size="Size.Small">
+                @(b.Available ? "Müsait" : "Ödünçte")
+            </MudChip>
+            @if (!string.IsNullOrWhiteSpace(b.Isbn))
+                        {
+            <MudText Typo="Typo.caption">ISBN: @b.Isbn</MudText>
+                        }
+        </div>
+    </MudCardContent>
+    <MudCardActions>
+        <MudButton Variant="Variant.Outlined"
+                   Color="Color.Primary"
+                   Href="@($"/books/{b.Isbn}")"
+                   Disabled="@string.IsNullOrWhiteSpace(b.Isbn)">
+            Detay
+        </MudButton>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Material.Filled.BookmarkAdd"
+                       AriaLabel="Listeme ekle"
+                       Disabled="@( !b.Available )" />
+    </MudCardActions>
+</MudCard>;
+}

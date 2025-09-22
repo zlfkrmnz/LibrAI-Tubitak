@@ -1,0 +1,2 @@
+wwwroot\favicon.ico
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI\wwwroot\favicon.ico

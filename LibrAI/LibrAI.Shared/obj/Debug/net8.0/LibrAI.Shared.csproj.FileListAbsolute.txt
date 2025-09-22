@@ -1,0 +1,12 @@
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\bin\Debug\net8.0\LibrAI.Shared.deps.json
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\bin\Debug\net8.0\LibrAI.Shared.dll
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\bin\Debug\net8.0\LibrAI.Shared.pdb
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\LibrAI.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\LibrAI.Shared.AssemblyInfoInputs.cache
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\LibrAI.Shared.AssemblyInfo.cs
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\LibrAI.Shared.csproj.CoreCompileInputs.cache
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\LibrAI.Shared.sourcelink.json
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\LibrAI.Shared.dll
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\refint\LibrAI.Shared.dll
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\LibrAI.Shared.pdb
+C:\Mac\Home\Documents\GitHub\LibrAI-Tubitak\LibrAI\LibrAI.Shared\obj\Debug\net8.0\ref\LibrAI.Shared.dll

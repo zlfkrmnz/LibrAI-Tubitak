@@ -1,90 +1,91 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using LibrAI.Models;
-using LibrAI.Services;
+﻿// LibrAI/Features/Books/BooksController.cs
+using LibrAI.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-namespace LibrAI.Controllers
+namespace LibrAI.Features.Books;
+
+public record BookListItemDto(int Id, string? Title, string? Author, string? Isbn, string? ImageUrl, bool Available);
+public record BookDetailDto(
+    int Id, string? Title, string? Author, string? Isbn, string? Publisher,
+    int? PageCount, string? Language, string? Description, string? ImageUrl,
+    DateTime? PublishDate, decimal? Price, bool Available);
+
+[ApiController]
+[Route("api/[controller]")]
+public class BooksController : ControllerBase
 {
-    public class BooksController : Controller
+    private readonly LibrAiDbContext _db;
+    public BooksController(LibrAiDbContext db) { _db = db; }
+
+    [HttpGet]
+    public async Task<ActionResult<PagedResult<BookListItemDto>>> Get(string? q, string filter = "all",
+        int page = 1, int pageSize = 24, string? sort = null, CancellationToken ct = default)
     {
-        private readonly BookService _bookService;
+        var books = _db.Books.AsNoTracking();
 
-        // Dependency Injection ile BookService alıyoruz
-        public BooksController(BookService bookService)
+        if (!string.IsNullOrWhiteSpace(q))
         {
-            _bookService = bookService;
-        }
-
-        // GET: Books (Kitap listesini gösterme)
-        public async Task<IActionResult> Index()
-        {
-            var books = await _bookService.GetAllBooksAsync();
-            return View(books);  // Kitapları View'a gönderiyoruz
-        }
-
-        // GET: Books/Create (Yeni kitap ekleme sayfası)
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Books/Create (Yeni kitap ekleme işlemi)
-        [HttpPost]
-        public async Task<IActionResult> Create(Book book)
-        {
-            if (ModelState.IsValid)
+            var like = $"%{q}%";
+            books = filter switch
             {
-                await _bookService.AddBookAsync(book);  // Kitap ekleme işlemi
-                return RedirectToAction(nameof(Index));  // Kitap eklendikten sonra liste sayfasına yönlendirme
-            }
-            return View(book);  // Geçersiz model durumunda aynı sayfada kalır
+                "title" => books.Where(b => EF.Functions.Like(b.title!, like)),
+                "author" => books.Where(b => EF.Functions.Like(b.author!, like)),
+                "isbn" => books.Where(b => EF.Functions.Like(b.isbn!, like)),
+                _ => books.Where(b =>
+                               EF.Functions.Like(b.title!, like) ||
+                               EF.Functions.Like(b.author!, like) ||
+                               EF.Functions.Like(b.isbn!, like))
+            };
         }
 
-        // GET: Books/Edit/5 (Kitap düzenleme sayfası)
-        public async Task<IActionResult> Edit(int id)
+        // sıralama örnekleri
+        books = sort switch
         {
-            var book = await _bookService.GetBookByIdAsync(id);
-            if (book == null)
-            {
-                return NotFound();  // Kitap bulunmazsa hata sayfasına yönlendirme
-            }
-            return View(book);  // Kitap düzenleme sayfasına gönderme
-        }
+            "new" => books.OrderByDescending(b => b.publish_date),
+            "popular" => books.OrderBy(b => b.title), // TODO: popülerlik metrik varsa değiştir
+            _ => books.OrderBy(b => b.title)
+        };
 
-        // POST: Books/Edit/5 (Kitap güncelleme işlemi)
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id, Book book)
-        {
-            if (id != book.Id)
-            {
-                return NotFound();  // ID eşleşmezse hata sayfasına yönlendirme
-            }
+        var total = await books.CountAsync(ct);
 
-            if (ModelState.IsValid)
-            {
-                await _bookService.UpdateBookAsync(book);  // Kitap güncelleme işlemi
-                return RedirectToAction(nameof(Index));  // Güncelleme sonrası liste sayfasına yönlendirme
-            }
-            return View(book);  // Geçersiz model durumunda düzenleme sayfasına geri dönme
-        }
+        var pageItems = await books
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .Select(b => new BookListItemDto(
+                b.id,
+                b.title,
+                b.author,
+                b.isbn,
+                b.image_url,
+                !_db.Loans.Any(l => l.BookId == b.id && l.ReturnedAt == null)
+            ))
+            .ToListAsync(ct);
 
-        // GET: Books/Delete/5 (Kitap silme sayfası)
-        public async Task<IActionResult> Delete(int id)
-        {
-            var book = await _bookService.GetBookByIdAsync(id);
-            if (book == null)
-            {
-                return NotFound();  // Kitap bulunmazsa hata sayfasına yönlendirme
-            }
-            return View(book);  // Silme sayfasına gönderme
-        }
-
-        // POST: Books/Delete/5 (Kitap silme işlemi)
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await _bookService.DeleteBookAsync(id);  // Kitap silme işlemi
-            return RedirectToAction(nameof(Index));  // Silme sonrası liste sayfasına yönlendirme
-        }
+        return Ok(new PagedResult<BookListItemDto>(pageItems, total, page, pageSize));
     }
+
+    [HttpGet("{isbn}")]
+    public async Task<ActionResult<BookDetailDto>> GetByIsbn(string isbn, CancellationToken ct)
+    {
+        var b = await _db.Books.AsNoTracking().FirstOrDefaultAsync(x => x.isbn == isbn, ct);
+        if (b is null) return NotFound();
+
+        var available = !await _db.Loans.AnyAsync(l => l.BookId == b.id && l.ReturnedAt == null, ct);
+
+        return new BookDetailDto(
+            b.id, b.title, b.author, b.isbn, b.publisher,
+            b.page_count, b.language, b.description, b.image_url,
+            TryParseDate(b.publish_date), TryParsePrice(b.price), available
+        );
+    }
+
+    private static DateTime? TryParseDate(string? s) =>
+        DateTime.TryParse(s, out var d) ? d : null;
+
+    private static decimal? TryParsePrice(string? s) =>
+        decimal.TryParse(s, System.Globalization.NumberStyles.Any,
+            System.Globalization.CultureInfo.InvariantCulture, out var d) ? d : null;
 }
+
+public record PagedResult<T>(IReadOnlyList<T> Items, int Total, int Page, int PageSize);

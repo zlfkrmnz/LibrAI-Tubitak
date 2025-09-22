@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Web
+@inject AuthClient Auth
+@inject NavigationManager Nav
+
+<MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">Ana Sayfa</MudNavLink>
+<AuthorizeView>
+    <Authorized>
+        <MudNavLink Href="/profile" Icon="@Icons.Material.Filled.Person">Profil</MudNavLink>
+        <MudNavLink OnClick="@Logout" Icon="@Icons.Material.Filled.Logout">Çıkış</MudNavLink>
+    </Authorized>
+    <NotAuthorized>
+        <MudNavLink Href="/login" Icon="@Icons.Material.Filled.Login">Giriş Yap</MudNavLink>
+        <MudNavLink Href="/register" Icon="@Icons.Material.Filled.PersonAdd">Kayıt Ol</MudNavLink>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private async Task Logout()
+    {
+        await Auth.LogoutAsync();
+        Nav.NavigateTo("/");
+    }
+}
